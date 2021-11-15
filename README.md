@@ -1,5 +1,7 @@
 # GameProjectRCC
 
+TEST
+
 Projet Jeu R-C-C
 
 Instructions : 
