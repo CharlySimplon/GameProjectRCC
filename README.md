@@ -13,6 +13,6 @@ Ce donjon se présente sous la forme d'une tour avec plusieurs étages (Floor), 
 
 Déroulement du combat :
 Il se déroule en tour par tour dans lequel vous avez l'initiative. Vous aurez alors le choix entre attaquer, défendre ou utiliser une potion. L'ennemi quant à lui attaquera toujours à la fin de votre tour. 
-Attaquer : Infliger des dégats à l'ennemi (% coup critique)
-Défendre : Limiter les dégats infligés par l'ennemi pendant plusieurs tours
-Potion : Permer de récupérer des Points de Vie
+Attaquer : Inflige des dégats à l'ennemi (% coup critique)
+Défendre : Limite les dégats infligés par l'ennemi pendant plusieurs tours
+Potion : Permet de récupérer des Points de Vie
