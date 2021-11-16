@@ -1,6 +1,6 @@
 from random import randint
 
-def drop(droprate, value, score, score_ennemy, difficulty):
+def drop(droprate, value, score, score_ennemy, difficulty, floor):
     """This function allow to know if an item is won or not and to update the score depending on
     the difficulty and the ennemy"""
     if difficulty == 0:
@@ -10,6 +10,7 @@ def drop(droprate, value, score, score_ennemy, difficulty):
     elif difficulty == 0.2:
         factor = 3
     score += (score_ennemy * factor)
+    floor += 1
     if value <= droprate : 
         print("----------------L'ennemi a laissé un objet derrière lui--------------------")
         value = randint(0, 100)
@@ -57,7 +58,7 @@ def item(value, potion, attack_player):
             return print("Votre équipement actuel est meilleur")
     else:
         print("Potion")
-        if potion <5:
+        if potion < 5:
             potion += 1
             return potion
     

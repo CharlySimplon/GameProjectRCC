@@ -1,24 +1,25 @@
-def choix(route=""):  
+def choix(route="", floor=0, score=0): 
+    print(f'Vous arrivez à l\'étage {floor} et votre score est de : {score}') 
     a = "a:route facile"
     b = "b:route normal"
     c = "c:route difficile" 
     d = "d:quitter le jeu" 
-    difficulte = 0
+    difficulty = 0
      
     while route not in ["a","b","c","d"]:
         print("Vous avez le choix entre 3 routes devant vous :\n",a,b,c,d)
-        route = input("quel route vous voulez choisser?")
+        route = input("Quelle route voulez-vous choisir?")
         if route == "d":
             playing = False
             return print("au revoir")
         elif route == "a":
-            difficulte = 0.1
+            difficulty = 0
         elif route == "b":
-            difficulte = 0.3
+            difficulty = 0.1
         elif route == "c":
-            difficulte = 0.5
+            difficulty = 0.2
         else :
-             print("Veuillez saisir n'importe quelle lettre de a, b, c, d selon les options")
+             print("Veuillez saisir  a, b, c ou d selon les options")
 
-    return difficulte
+    return difficulty
     

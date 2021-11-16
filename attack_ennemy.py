@@ -1,6 +1,6 @@
 
 def attack_ennemy(defense,hp_player,force_ennemy,score):
-    #This function takes away health points from life's player when an ennemy attacks him.
+    """This function takes away health points from life's player when an ennemy attacks him."""
     if defense != 0 :
         force_ennemy_with_defense = round(force_ennemy / 1.5)
         defense -= 1
