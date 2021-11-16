@@ -1,6 +1,8 @@
 def defense_player(defense):
     if defense !=0 :
-        return print("Tu as déjà un bouclier !")
+        print("Tu as déjà un bouclier !")
+        return defense
     else:
         defense == 3
-        return print("Te voilà équipé d'un bouclier pendant 3 tours !")
+        print("Te voilà équipé d'un bouclier pendant 3 tours !")
+        return defense

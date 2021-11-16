@@ -1,9 +1,10 @@
 from random import randint
-from deplacment import choix
 
-def drop(droprate, value, score, score_ennemy, difficulty, floor, potion):
+
+def drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player):
     """This function allow to know if an item is won or not and to update the score depending on
     the difficulty and the ennemy"""
+    value = randint(0,100)
     if difficulty == 0:
         factor = 1
     elif difficulty == 0.1:
@@ -15,9 +16,9 @@ def drop(droprate, value, score, score_ennemy, difficulty, floor, potion):
     if value <= droprate : 
         print("----------------L'ennemi a laissé un objet derrière lui--------------------")
         value = randint(0, 100)
-        item(value,potion,)
+        item(value,potion,attack_player, floor, score)
     print('Nouveau score : {score}')
-    choix()
+    # choix()
 
 def item(value, potion, attack_player, floor, score):
     """ This function allow to attribute an equipment to a player if it is better than the ancient 
@@ -63,7 +64,7 @@ def item(value, potion, attack_player, floor, score):
         if potion < 5:
             potion += 1
             return potion
-    choix(route="", floor=floor, score=score)
+    #choix(route="", floor=floor, score=score)
     
     
      

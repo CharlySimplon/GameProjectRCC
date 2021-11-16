@@ -1,5 +1,6 @@
 from deplacment import choix
 
+
 print("Bienvenue sur le jeu : 'Simplon Escape' !")
 print("Le but du jeu est de sauver la princesse Claire emprisonnée en haut du donjon Simplon.co. \nVous êtes le Héros de cette quête et partez à la rescousse de la princesse. \nVous aurez à affronter de nombreux ennemis au cours de votre ascension dans le donjon.")
 
@@ -22,7 +23,7 @@ while playing:
         hp_player = 50
         max_hp_player = 50
         attack_player = 5
-        choix()
+        choix(hp_player=hp_player, potion=potion, attack_player=attack_player)
         break
     
     else:
