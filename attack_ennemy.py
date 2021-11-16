@@ -11,4 +11,4 @@ def attack_ennemy(defense,hp_player,force_ennemy):
         hp_player -= force_ennemy
         print("Vous avez subi {} points de dégâts".format(force_ennemy))
     print(f'Il vous reste {hp_player}PV')
-    return hp_player
+    # return hp_player

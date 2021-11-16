@@ -6,4 +6,4 @@ def attack_p (hp_ennemy,attack_player):
     else:
         hp_ennemy -= attack_player
     print(f'Il reste {hp_ennemy} PV à l\'ennemi')
-    return hp_ennemy
+    # return hp_ennemy

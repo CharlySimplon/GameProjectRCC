@@ -15,7 +15,10 @@ def battle(hp_player, hp_ennemy, potion, droprate,force_ennemy, score, score_enn
         elif choice == "2":
             defense_player(defense)
         elif choice == "3":
-            drink_potion(hp_player, max_players_hp=50, potion=potion)
+            if potion >= 1:
+                drink_potion(hp_player, max_players_hp=50, potion=potion)
+            else: 
+                pass
         if hp_ennemy != 0:
             attack_ennemy(defense,hp_player,force_ennemy)
     if hp_player == 0:
