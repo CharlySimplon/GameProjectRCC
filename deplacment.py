@@ -11,7 +11,8 @@ def choix(route="", floor=0, score=0):
         route = input("Quelle route voulez-vous choisir?")
         if route == "d":
             playing = False
-            return print("au revoir")
+            print("au revoir")
+            break
         elif route == "a":
             difficulty = 0
         elif route == "b":

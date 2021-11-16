@@ -23,11 +23,9 @@ while playing:
         max_hp_player = 50
         attack_player = 5
         choix()
-        # start()
+        break
+    
     else:
         defi = str(input("Toi pas comprendre ? Y or N ? "))
 
-# def start(playing):
-#     while playing == True :
-#         floor = 0
-#         choix()
+
