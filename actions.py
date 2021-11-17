@@ -34,12 +34,12 @@ def defense_player(defense):
     return defense
     
 
-def drink_potion(players_hp, max_players_hp, potion):
+def drink_potion(players_hp, potion, max_hp_player):
     """This function gives back 20 HP to the player in battle."""
-    if players_hp < max_players_hp -20:
+    if players_hp < max_hp_player -20:
         players_hp += 20
     else:
-        players_hp = max_players_hp
+        players_hp = max_hp_player
     potion -= 1
     print(f'-------Vous avez maintenant {potion} potions et {players_hp}PV')
-    return players_hp
+    return players_hp, potion

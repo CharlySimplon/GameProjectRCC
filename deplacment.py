@@ -1,6 +1,6 @@
 from summon_monster import summon_monster
 
-def choix(hp_player, attack_player, potion, floor, score, route=""):
+def choix(hp_player, attack_player, potion, floor, score, playing, route=""):
     """This function allows the player to choose the difficulty of the game according to different roads"""
     print(f'Vous arrivez à l\'étage {floor} et votre score est de : {score}') 
     a = "a : route facile  "
@@ -18,17 +18,17 @@ def choix(hp_player, attack_player, potion, floor, score, route=""):
             break
         elif route == "a":
             difficulty = 0
-            hp_player, score, attack_player, potion, floor = summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
+            hp_player, score, attack_player, potion, floor, playing = summon_monster(hp_player, potion, floor, difficulty, attack_player,score, playing)
         elif route == "b":
             difficulty = 0.1
-            hp_player, score, attack_player, potion, floor = summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
+            hp_player, score, attack_player, potion, floor, playing = summon_monster(hp_player, potion, floor, difficulty, attack_player,score, playing)
         elif route == "c":
             difficulty = 0.2
-            hp_player, score, attack_player, potion, floor = summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
+            hp_player, score, attack_player, potion, floor, playing = summon_monster(hp_player, potion, floor, difficulty, attack_player,score, playing)
         else :
              print("Veuillez saisir  a, b, c ou d selon les options")
     
-    return hp_player, attack_player, potion, floor, score
+    return hp_player, attack_player, potion, floor, score, playing
 
     
     

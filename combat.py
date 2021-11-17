@@ -2,7 +2,7 @@ from actions import defense_player, drink_potion, attack_ennemy, attack_p
 from drop import drop
 
 
-def battle(hp_player, hp_ennemy, potion, droprate,force_ennemy, score, score_ennemy, difficulty, floor, attack_player):
+def battle(hp_player, hp_ennemy, potion, droprate,force_ennemy, score, score_ennemy, difficulty, floor, attack_player, playing):
     defense = 0
     while hp_player > 0 and hp_ennemy > 0:
         choice = input("1: Attaque \n2: Défendre\n3: Potion\n")
@@ -12,7 +12,7 @@ def battle(hp_player, hp_ennemy, potion, droprate,force_ennemy, score, score_enn
             defense = defense_player(defense)
         elif choice == "3":
             if potion >= 1:
-                hp_player, potion = drink_potion(hp_player, 50, potion)
+                hp_player, potion = drink_potion(hp_player,potion, max_hp_player=50)
             else: 
                 pass
         if hp_ennemy != 0:
@@ -21,5 +21,5 @@ def battle(hp_player, hp_ennemy, potion, droprate,force_ennemy, score, score_enn
         playing = False
         pass
 
-    score, attack_player, potion, floor = drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player)
-    return hp_player, score, attack_player, potion, floor
+    score, attack_player, potion, floor, playing = drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player, playing)
+    return hp_player, score, attack_player, potion, floor, playing

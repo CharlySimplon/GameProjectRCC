@@ -33,5 +33,6 @@ while beginning:
         defi = str(input("Toi pas comprendre ? Y or N ? "))
 
 while playing:
-    hp_player, attack_player, potion, floor, score = choix(hp_player, attack_player, potion, floor, score)
+    hp_player, attack_player, potion, floor, score, playing = choix(hp_player, attack_player, potion, floor, score, playing)
+    pass
 
