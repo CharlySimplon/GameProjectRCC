@@ -1,0 +1,1 @@
+Pour lancer ce jeu, vous avez juste besoin de python ainsi que d'un éditeur de texte (VSC, PyCharm, Atom, ...)

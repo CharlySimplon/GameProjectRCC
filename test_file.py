@@ -1,53 +1,55 @@
 import pytest
-from potion import potion
+from actions import drink_potion, attack_ennemy, attack_p, defense_player
 from drop import drop,item
 from deplacment import choix
-from attack_player import attack_p
-from attack_ennemy import attack_ennemy
-from defense_player import defense_player
 
 
-def test_potion():
-    assert potion(50, 100, 2) == print("+20 PV ========> ",70)
-    assert potion(80, 100, 3) == print("+20 PV ========> ",100)
-    assert potion(40, 100, 4) == print("+20 PV ========> ",60)
-    assert potion(90, 100, 2) == print("+20 PV ========> ",100)
-    assert potion(85, 100, 3) == print("+20 PV ========> ",100)
+
+def test_drink_potion():
+    assert drink_potion(50, 2, 100) == (70, 1)
+    assert drink_potion(80, 3, 100) == (100, 2)
+    assert drink_potion(40, 4, 100) == (60, 3)
+    assert drink_potion(90, 2, 110) == (110, 1)
+    assert drink_potion(85, 3, 90) == (90, 2)
+
 
 def test_drop():
-    assert drop(20, 30, 50, 10, 0) == print('Nouveau score : 60')
-    assert drop(20, 30, 50, 20, 0.1) == print('Nouveau score : 90')
-    assert drop(20, 30, 50, 30, 0.2) == print('Nouveau score : 140')
-    assert drop(20, 50, 50, 20, 0) == print('Nouveau score : 70')
-    assert drop(20, 21, 80, 10, 0.2) == print('Nouveau score : 110')
+    # score, attack_player, potion, floor, playing
+    #assert drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player, playing,value = randint(0,100)) == 
+    assert drop(20, 50,60,0.1,80,3,2,True,66) == (170, 2, 3, 81, True)
+    # assert drop(20, 50,60,0.1,80,3,2,True,18) == (170, 2, 3, 81, True)
+    # assert drop(20, 50,60,0.1,80,3,2,True,66) == (170, 2, 3, 81, True)
+    # assert drop(20, 50,60,0.1,80,3,2,True,66) == (170, 2, 3, 81, True)
 
 def test_item():
-    assert item(10, 2, 20) == print("Votre équipement actuel est meilleur")
-    assert item(10 ,2, 30) == print("Votre équipement actuel est meilleur")
-    assert item(1, 2, 25) == 55
-    assert item(51, 3, 5) == 4
-
+   # assert item(value, potion, attack_player, floor, score, playing) 
+    assert item(2, 30, 1, 50, True,10) == (50,30,2,1,True)
+    assert item(2, 25, 2, 100, True,1) == (100,55,2,2,True)
+    assert item(3, 5,10, 0,False,51) == (0,5,4,10,False)
+    assert item(5, 5,10, 0,False,51) == (0,5,5,10,False)
+"""
 def test_choix(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda x : "f")
-    assert choix("f") == "Nous ne comprenons pas votre choix, veuillez saisir n'importe quelle lettre de a, b, c, d selon les options"
-    assert choix("a") == 0.1
-    assert choix("b") == 0.3
-    assert choix("c") == 0.5
-
+    assert choix("f") == 
+    assert choix("a") == 
+    assert choix("b") == 
+    assert choix("c") == 
+"""
 
 def test_attack_p():
-    assert attack_p(20,20) == "Filicitation,Vous avez réussi à vaincre l'ennemi!"
+    assert attack_p(20,20) == 0
     assert attack_p(20,5) == 15
+    assert attack_p(25,7) == 18
+    assert attack_p(20,60) == 0
+
 
 def test_attack_ennemy():
-    assert attack_ennemy(0,20,10,50) == print("Il vous reste {} points de vie.".format(10)) #recoit un coup sans defense
-    assert attack_ennemy(1,20,10,50) == print("Il vous reste {} points de vie.".format(13)) #recoit un coup avec defense
-    assert attack_ennemy(0,10,0,50) == print("Il vous reste {} points de vie.".format(10)) #recoit un coup égale à 0 sans défense
-    assert attack_ennemy(2,10,0,50) == print("Il vous reste {} points de vie.".format(10)) #recoit un coup égale à 0 avec défense
-
-    assert attack_ennemy(0,5,10,50) == print("Vous mourrez dans d'atroces souffrances...Votre score est de : {} points.".format(50)) #meurt sans défense
-    assert attack_ennemy(2,5,10,60) == print("Vous mourrez dans d'atroces souffrances...Votre score est de : {} points.".format(60)) #meurt avec défense
+    assert attack_ennemy(0,20,10) ==  10 #recoit un coup sans defense
+    assert attack_ennemy(1,20,10) ==  13 #recoit un coup avec defense
+    assert attack_ennemy(0,10,0) ==  10 #recoit un coup égale à 0 sans défense
+    assert attack_ennemy(2,10,0) ==  10 #recoit un coup égale à 0 avec défense
 
 def test_defense_player():
-    assert defense_player(0) == print("Te voilà équipé d'un bouclier pendant 3 tours !") #met un bouclier
-    assert defense_player(2) == print("Tu as déjà un bouclier !") #refuse de mettre un bouclier car déjà équipé
+    assert defense_player(0) == 3 #met un bouclier
+    assert defense_player(2) == 2 #refuse de mettre un bouclier car déjà équipé
+    assert defense_player(1) == 1 #refuse de mettre un bouclier car déjà équipé
