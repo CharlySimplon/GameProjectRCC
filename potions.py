@@ -5,4 +5,4 @@ def drink_potion(players_hp, max_players_hp, potion):
         players_hp = max_players_hp
     potion -= 1
     print(f'-------Vous avez maintenant {potion} potions et {players_hp}PV')
-    return players_hp
+    return players_hp, potion

@@ -16,8 +16,9 @@ def drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player
     if value <= droprate : 
         print("----------------L'ennemi a laissé un objet derrière lui--------------------")
         value = randint(0, 100)
-        item(value,potion,attack_player, floor, score)
+        score, attack_player, potion, floor = item(value,potion,attack_player, floor, score)
     print(f'Nouveau score : {score}')
+    return score, attack_player, potion, floor
 
 def item(value, potion, attack_player, floor, score):
     """ This function allow to attribute an equipment to a player if it is better than the ancient 
@@ -57,8 +58,7 @@ def item(value, potion, attack_player, floor, score):
         print("Potion")
         if potion < 5:
             potion += 1
-    return score, attack_player, potion
-    #choix(route="", floor=floor, score=score)
+    return score, attack_player, potion, floor
     
     
      

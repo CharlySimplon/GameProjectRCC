@@ -4,12 +4,15 @@ from deplacment import choix
 print("Bienvenue sur le jeu : 'Simplon Escape' !")
 print("Le but du jeu est de sauver la princesse Claire emprisonnée en haut du donjon Simplon.co. \nVous êtes le Héros de cette quête et partez à la rescousse de la princesse. \nVous aurez à affronter de nombreux ennemis au cours de votre ascension dans le donjon.")
 
-defi = input("-----------\nEtes-vous prêt(e) à relever ce défi ? (Y/N) ")
 playing = True
-while playing:
+beginning = True
+defi = input("-----------\nEtes-vous prêt(e) à relever ce défi ? (Y/N) ")
+
+while beginning:
         
     if defi.lower() == "n":
         playing = False
+        beginning = False
         print("Votre décision est lourde de conséquences. Claire restera dans son donjon pour le restant de ses jours...\n Ouste péant ! Reviens quand tu seras un peu plus valeureux !")
         
     elif defi.lower() == "y":
@@ -19,14 +22,16 @@ while playing:
         print("Trêve de bavardages ! Il est temps pour toi de te confronter au plus grand défi de ta vie...")
         print("--- ENTREE DU DONJON ---")
         floor = 0
+        score = 0
         potion = 3
         hp_player = 50
         max_hp_player = 50
         attack_player = 5
-        choix(hp_player=hp_player, potion=potion, attack_player=attack_player)
-        break
+        beginning = False
     
     else:
         defi = str(input("Toi pas comprendre ? Y or N ? "))
 
+while playing:
+    hp_player, attack_player, potion, floor, score = choix(hp_player, attack_player, potion, floor, score)
 
