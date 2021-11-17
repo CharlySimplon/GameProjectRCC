@@ -4,4 +4,4 @@ def defense_player(defense):
     else:
         defense = 3
         print("Te voilà équipé d'un bouclier pendant 3 tours !")
-    # return defense
+    return defense

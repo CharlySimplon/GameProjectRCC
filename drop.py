@@ -17,8 +17,7 @@ def drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player
         print("----------------L'ennemi a laissé un objet derrière lui--------------------")
         value = randint(0, 100)
         item(value,potion,attack_player, floor, score)
-    print('Nouveau score : {score}')
-    # choix()
+    print(f'Nouveau score : {score}')
 
 def item(value, potion, attack_player, floor, score):
     """ This function allow to attribute an equipment to a player if it is better than the ancient 
@@ -28,42 +27,37 @@ def item(value, potion, attack_player, floor, score):
         print("EXCALIBUR")
         if attack_player < 5 + dict["EXCALIBUR"]:
             attack_player = 5 + dict["EXCALIBUR"]
-            return attack_player
         else: 
-            return print("Votre équipement actuel est meilleur")
+            print("Votre équipement actuel est meilleur")
     elif 1 < value <= 7:
         print("Hâche")
         if attack_player < 5 + dict["Hâche"]:
             attack_player = 5 + dict["Hâche"]
-            return attack_player
         else: 
-            return print("Votre équipement actuel est meilleur")
+            print("Votre équipement actuel est meilleur") 
     elif 7 < value <= 15:
         print("Epee")
         if attack_player < 5 + dict["Epee"]:
             attack_player = 5 + dict["Epee"]
-            return attack_player
         else: 
-            return print("Votre équipement actuel est meilleur")
+            print("Votre équipement actuel est meilleur")
     elif 15 < value <= 30:
         print("Dague")
         if attack_player < 5 + dict["Dague"]:
             attack_player = 5 + dict["Dague"]
-            return attack_player
         else: 
-            return print("Votre équipement actuel est meilleur")
+            print("Votre équipement actuel est meilleur")
     elif 30 < value <= 50:
         print("Cure-dent")
         if attack_player < 5 + dict["Cure-dent"]:
             attack_player = 5 + dict["Cure-dent"]
-            return attack_player
         else: 
-            return print("Votre équipement actuel est meilleur")
+            print("Votre équipement actuel est meilleur")
     else:
         print("Potion")
         if potion < 5:
             potion += 1
-            return potion
+    return score, attack_player, potion
     #choix(route="", floor=floor, score=score)
     
     
