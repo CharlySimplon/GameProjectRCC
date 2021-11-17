@@ -17,9 +17,10 @@ def battle(hp_player, hp_ennemy, potion, droprate,force_ennemy, score, score_enn
                 pass
         if hp_ennemy != 0:
             hp_player = attack_ennemy(defense,hp_player,force_ennemy)
-    if hp_player == 0:
+            
+    if hp_player <= 0:
         playing = False
         pass
-
-    score, attack_player, potion, floor, playing = drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player, playing)
+    else:
+        score, attack_player, potion, floor, playing = drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player, playing)
     return hp_player, score, attack_player, potion, floor, playing

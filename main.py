@@ -1,5 +1,5 @@
 from deplacment import choix
-
+import json
 
 print("Bienvenue sur le jeu : 'Simplon Escape' !")
 print("Le but du jeu est de sauver la princesse Claire emprisonnée en haut du donjon Simplon.co. \nVous êtes le Héros de cette quête et partez à la rescousse de la princesse. \nVous aurez à affronter de nombreux ennemis au cours de votre ascension dans le donjon.")
@@ -34,5 +34,13 @@ while beginning:
 
 while playing:
     hp_player, attack_player, potion, floor, score, playing = choix(hp_player, attack_player, potion, floor, score, playing)
-    pass
+    if hp_player <= 0 :
+        print(f"Vous êtes mort ! Votre score est de {score}")
+        print("Claire attendra malheureusement un nouvel héros pour la sauver ...")
+        with open('Score.json', 'w') as scores:
+            json.dump({player_name:score}, scores)
+        with open('Score.txt', 'a') as scores:
+            scores.write(f'{player_name} = {score},\n')
+        break
+    
 

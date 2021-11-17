@@ -17,10 +17,10 @@ def attack_ennemy(defense,hp_player,force_ennemy):
 def attack_p (hp_ennemy,attack_player):
     """This function takes away health points from life's ennemy when the player attacks."""
     if hp_ennemy <= attack_player:
-        print("Filicitation,Vous avez réussi à vaincre l'ennemi!") 
+        print("Félicitation,Vous avez réussi à vaincre l'ennemi!") 
         return 0
     else:
-        print(f'Il reste {hp_ennemy} PV à l\'ennemi')
+        print(f'Il reste {hp_ennemy - attack_player} PV à l\'ennemi')
         return hp_ennemy - attack_player
 
 

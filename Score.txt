@@ -1,0 +1,3 @@
+rudy = 20,
+charly = 30,
+Claire = 20,
