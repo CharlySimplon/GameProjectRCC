@@ -18,15 +18,17 @@ def choix(hp_player, attack_player, potion, floor, score, route=""):
             break
         elif route == "a":
             difficulty = 0
-            return summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
+            hp_player, score, attack_player, potion, floor = summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
         elif route == "b":
             difficulty = 0.1
-            return summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
+            hp_player, score, attack_player, potion, floor = summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
         elif route == "c":
             difficulty = 0.2
-            return summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
+            hp_player, score, attack_player, potion, floor = summon_monster(hp_player, potion, floor, difficulty, attack_player,score)
         else :
              print("Veuillez saisir  a, b, c ou d selon les options")
+    
+    return hp_player, attack_player, potion, floor, score
 
     
     
