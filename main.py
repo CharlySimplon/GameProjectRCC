@@ -33,7 +33,9 @@ while beginning:
         defi = str(input("Toi pas comprendre ? Y or N ? "))
 
 while playing:
-    hp_player, attack_player, potion, floor, score, playing = choix(hp_player, attack_player, potion, floor, score, playing)
+    # appel de la fonction choix du fichier deplacement
+    hp_player, attack_player, potion, floor, score, playing = choix(hp_player, attack_player, potion, floor, score, playing, player_name)
+    # Fin de partie si player mort
     if hp_player <= 0 :
         print(f"Vous êtes mort ! Votre score est de {score}")
         print("Claire attendra malheureusement un nouvel héros pour la sauver ...")

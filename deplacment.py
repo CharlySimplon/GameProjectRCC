@@ -1,6 +1,6 @@
 from summon_monster import summon_monster
 
-def choix(hp_player, attack_player, potion, floor, score, playing, route=""):
+def choix(hp_player, attack_player, potion, floor, score, playing, player_name,route=""):
     """This function allows the player to choose the difficulty of the game according to different roads"""
     print(f'Vous arrivez à l\'étage {floor} et votre score est de : {score}') 
     a = "a : route facile  "
@@ -16,6 +16,7 @@ def choix(hp_player, attack_player, potion, floor, score, playing, route=""):
             playing = False
             print("au revoir")
             break
+        # Appel de la fonction summon_monster du fichier summon_monster
         elif route == "a":
             difficulty = 0
             hp_player, score, attack_player, potion, floor, playing = summon_monster(hp_player, potion, floor, difficulty, attack_player,score, playing)
@@ -25,9 +26,14 @@ def choix(hp_player, attack_player, potion, floor, score, playing, route=""):
         elif route == "c":
             difficulty = 0.2
             hp_player, score, attack_player, potion, floor, playing = summon_monster(hp_player, potion, floor, difficulty, attack_player,score, playing)
+        elif route == "d":
+            playing = False
+            if score != 0:
+                with open('Score.txt', 'a') as scores:
+                    scores.write(f'{player_name} = {score},\n')
         else :
              print("Veuillez saisir  a, b, c ou d selon les options")
-    
+    # Retour sur le fichier main
     return hp_player, attack_player, potion, floor, score, playing
 
     

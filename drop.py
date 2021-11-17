@@ -14,8 +14,10 @@ def drop(droprate, score, score_ennemy, difficulty, floor, potion, attack_player
     floor += 1
     if value <= droprate : 
         print("----------------L'ennemi a laissé un objet derrière lui--------------------")
+        # Appel de la fonction item
         score, attack_player, potion, floor, playing = item(value,potion,attack_player, floor, score, playing)
     print(f'Nouveau score : {score}')
+    # Retour sur la fonction battle du fichier combat
     return score, attack_player, potion, floor, playing
 
 def item(potion, attack_player, floor, score, playing, value = randint(0, 100)):
@@ -56,6 +58,7 @@ def item(potion, attack_player, floor, score, playing, value = randint(0, 100)):
         print("Potion")
         if potion < 5:
             potion += 1
+    # Retour sur la fonction drop
     return score, attack_player, potion, floor, playing
     
     

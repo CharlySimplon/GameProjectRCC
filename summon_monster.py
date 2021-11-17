@@ -11,6 +11,7 @@ def summon_monster(hp_player, potion, floor,difficulty, attack_player,score, pla
     force_ennemy = round(force_base + ((floor/10)+difficulty) * force_base)
     hp_ennemy = round(hp_base_ennemy + ((floor/10)+difficulty) * hp_base_ennemy)
     print("Vous venez d'invoquer un monstre avec {} points de vie et avec une force de {}.".format(hp_ennemy,force_ennemy))
-   
+    # Appel de la fonction battle du fichier combat.py
     hp_player, score, attack_player, potion, floor, playing = battle(hp_player,hp_ennemy,potion,droprate, force_ennemy,score,score_ennemy,difficulty,floor,attack_player,playing)
+    # Retour sur la fonction choix du fichier deplacement
     return hp_player, score, attack_player, potion, floor, playing

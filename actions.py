@@ -11,16 +11,19 @@ def attack_ennemy(defense,hp_player,force_ennemy):
         print("Vous avez subi {} points de dégâts".format(force_ennemy))
 
     print(f'Il vous reste {hp_player}PV')
+    # Retour sur combat
     return hp_player 
 
 
 def attack_p (hp_ennemy,attack_player):
     """This function takes away health points from life's ennemy when the player attacks."""
     if hp_ennemy <= attack_player:
-        print("Félicitation,Vous avez réussi à vaincre l'ennemi!") 
+        print("Félicitation,Vous avez réussi à vaincre l'ennemi!")
+        # Retour sur combat 
         return 0
     else:
         print(f'Il reste {hp_ennemy - attack_player} PV à l\'ennemi')
+        # Retour sur combat
         return hp_ennemy - attack_player
 
 
@@ -31,6 +34,7 @@ def defense_player(defense):
     else:
         defense = 3
         print("Te voilà équipé d'un bouclier pendant 3 tours !")
+    # Retour sur combat
     return defense
     
 
@@ -42,4 +46,5 @@ def drink_potion(players_hp, potion, max_hp_player):
         players_hp = max_hp_player
     potion -= 1
     print(f'-------Vous avez maintenant {potion} potions et {players_hp}PV')
+    # Retour sur combat
     return players_hp, potion
